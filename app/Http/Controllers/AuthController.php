@@ -52,4 +52,27 @@ class AuthController extends Controller
         $response = ["message" => 'Incorrect email or password'];
         return response()->json($response, 400);
     }
+
+    public function index(){
+        $users = User::all();
+        return response()->json(['message' => 'Succes','data' => $users]);
+    }
+    // public function show($id){
+    //     $user = User::find($id);
+    //     return response()->json(['message' => 'Succes','data' => $user]);
+    // }
+    // public function store(Request $request){
+    //     $user = User::create($request->all());
+    //     return response()->json(['message' => 'Succes','data' => $user]);
+    // }
+    // public function update(Request $request,$id){
+    //     $user = User::find($id);
+    //     $user->update($request->all());
+    //     return response()->json(['message' => 'Succes','data' => $user]);
+    // }
+    // public function destroy($id){
+    //     $user = User::find($id);
+    //     $user->delete();
+    //     return response()->json(['message' => 'Succes','data' => null]);
+    // }
 }
